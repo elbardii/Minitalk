@@ -42,5 +42,5 @@ unsigned int convertStringToPID(const char *inputString);
 void	ft_putchar_fd(char character, int fileDescriptor);
 void	ft_putstr_fd(const char *str, int file_descriptor);
 void write_pid_to_fd(unsigned int processId, int fileDescriptor);
-
+int	ft_upload(unsigned int destinationPid, const char *messageToSend);
 #endif//MINITALK_H
