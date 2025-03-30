@@ -3,11 +3,11 @@ CC = cc
 
 NAME = client
 SOURCES = mandatory/client.c \
-		  mandatory/ft_loadpid.c \
+		  mandatory/convertStringToPID.c \
 		  mandatory/ft_putchar_fd.c \
 		  mandatory/ft_putstr_fd.c \
 		  mandatory/ft_strlen.c \
-		  mandatory/ft_putpid_fd.c \
+		  mandatory/write_character_to_fd.c \
 		  mandatory/ft_upload.c
 OBJECTS = ${SOURCES:.c=.o}
 
