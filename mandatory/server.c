@@ -17,7 +17,7 @@ void ft_receive(int s, siginfo_t *info, void *context)
         g_client.pid = info->si_pid;
     if (g_client.nbites == 8)
     {
-        ft_put_client_message(&g_client);
+        show_client_message(&g_client);
         g_client.message[g_client.offset] = 0;
         g_client.nbites = 0;
         g_client.base = 1;

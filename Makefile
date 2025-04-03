@@ -17,7 +17,7 @@ SERVER_SOURCES = mandatory/server.c \
 		mandatory/ft_putchar_fd.c \
 		mandatory/ft_putstr_fd.c \
 		mandatory/ft_reset_client.c \
-		mandatory/ft_put_client_message.c
+		mandatory/show_client_message.c
 SERVER_OBJECTS = ${SERVER_SOURCES:.c=.o}
 
 REMOVE = rm -f

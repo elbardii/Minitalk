@@ -20,12 +20,12 @@
 
 typedef struct s_client
 {
-    int process_id;
-    size_t message_position;
-    char message_buffer[4];
-    int received_bits;
-    size_t bit_value;
-} t_client;
+	int		pid;
+	size_t	offset;
+	char	message[4];
+	int		nbites;
+	size_t	base;
+}	t_client;
 
 typedef struct s_server
 {
@@ -46,4 +46,5 @@ int ft_upload(unsigned int destinationPid, const char *messageToSend);
 void ft_reset_client(t_client *client);
 void handle_completed_byte(t_client *client);
 void ft_receive(int signal_type, siginfo_t *signal_info, void *context);
+void show_client_message(t_client *client_info);
 #endif // MINITALK_H
