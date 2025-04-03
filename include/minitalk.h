@@ -11,36 +11,39 @@
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
-# define MINITALK_H
+#define MINITALK_H
 
-# include <stddef.h>
-# include <signal.h>
+#include <stddef.h>
+#include <signal.h>
 
-# define USLEEP_DT 100
+#define USLEEP_DT 100
 
 typedef struct s_client
 {
-	int		pid;
-	size_t	offset;
-	char	message[4];
-	int		nbites;
-	size_t	base;
-}	t_client;
+    int process_id;
+    size_t message_position;
+    char message_buffer[4];
+    int received_bits;
+    size_t bit_value;
+} t_client;
 
 typedef struct s_server
 {
-	size_t			pid;
-	unsigned char	bit_offset;
-	size_t			message_bit;
-	size_t			message_pos;
-	size_t			message_len;
-	const char		*message;
-	int				running;
-}	t_server;
+	size_t pid;
+	unsigned char bit_offset;
+	size_t message_bit;
+	size_t message_pos;
+	size_t message_len;
+	const char *message;
+	int running;
+} t_server;
 
 unsigned int convertStringToPID(const char *inputString);
-void	ft_putchar_fd(char character, int fileDescriptor);
-void	ft_putstr_fd(const char *str, int file_descriptor);
+void ft_putchar_fd(char character, int fileDescriptor);
+void ft_putstr_fd(const char *str, int file_descriptor);
 void write_pid_to_fd(unsigned int processId, int fileDescriptor);
-int	ft_upload(unsigned int destinationPid, const char *messageToSend);
-#endif//MINITALK_H
+int ft_upload(unsigned int destinationPid, const char *messageToSend);
+void ft_reset_client(t_client *client);
+void handle_completed_byte(t_client *client);
+void ft_receive(int signal_type, siginfo_t *signal_info, void *context);
+#endif // MINITALK_H
