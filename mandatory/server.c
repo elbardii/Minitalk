@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: isel-bar <isel-bar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/05 02:33:38 by isel-bar          #+#    #+#             */
+/*   Updated: 2025/04/05 02:33:39 by isel-bar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <signal.h>
 #include <unistd.h>
 #include "minitalk.h"
@@ -34,7 +47,7 @@ int main(void)
 
     ft_reset_client(&g_client);
     ft_putstr_fd("Server PID: ", 1);
-    ft_putpid_fd(getpid(), 1);
+    write_pid_to_fd(getpid(), 1);
     ft_putstr_fd("\n", 1);
     sa.sa_sigaction = ft_receive;
     sigemptyset(&sa.sa_mask);

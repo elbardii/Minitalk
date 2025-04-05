@@ -6,7 +6,7 @@
 /*   By: isel-bar <isel-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 22:48:26 by isel-bar          #+#    #+#             */
-/*   Updated: 2025/03/23 22:11:49 by isel-bar         ###   ########.fr       */
+/*   Updated: 2025/04/03 21:00:07 by isel-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ void ft_reset_client(t_client *client);
 void handle_completed_byte(t_client *client);
 void ft_receive(int signal_type, siginfo_t *signal_info, void *context);
 void show_client_message(t_client *client_info);
+size_t ft_strlen(const char *inputString);
+void write_pid_to_fd(unsigned int processId, int fileDescriptor);
 #endif // MINITALK_H
