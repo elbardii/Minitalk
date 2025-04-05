@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: isel-bar <isel-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 02:33:19 by isel-bar          #+#    #+#             */
-/*   Updated: 2025/04/05 03:26:46 by isel-bar         ###   ########.fr       */
+/*   Created: 2025/04/05 02:28:38 by isel-bar          #+#    #+#             */
+/*   Updated: 2025/04/05 02:29:02 by isel-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "minitalk.h"
 
-size_t ft_strlen(const char *inputString)
+size_t	ft_strlen(const char *str)
 {
-    size_t length; 
-    length = 0; 
-    
-    while (inputString[length] != '\0')
-    {
-        length++; 
-    }
+	size_t	len;
 
-    return (length);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

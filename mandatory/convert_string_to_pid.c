@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   convert_string_to_pid.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isel-bar <isel-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,14 +12,21 @@
 
 #include "minitalk.h"
 
-void	ft_putstr_fd(const char *str, int file_descriptor)
+unsigned int	convert_string_to_pid(const char *str)
 {
-	int	i;
+	unsigned int	result;
+	int				i;
 
+	result = 0;
 	i = 0;
-	while (str[i])
+	while (str[i] >= '0' && str[i] <= '9' && result <= 99999)
 	{
-		ft_putchar_fd(str[i], file_descriptor);
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
+	if (str[i] != '\0' || result > 99999)
+	{
+		return (0);
+	}
+	return (result);
 }

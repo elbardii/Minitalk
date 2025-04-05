@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: isel-bar <isel-bar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/20 20:44:13 by isel-bar          #+#    #+#             */
-/*   Updated: 2025/04/05 02:30:45 by isel-bar         ###   ########.fr       */
+/*   Created: 2025/04/05 02:28:38 by isel-bar          #+#    #+#             */
+/*   Updated: 2025/04/05 02:29:02 by isel-bar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "minitalk.h"
 
-
-void	ft_putchar_fd(char character, int fileDescriptor)
+void	ft_putchar_fd(char character, int file_descriptor)
 {
-    
-    write(fileDescriptor, &character, 1);
+	write(file_descriptor, &character, 1);
 }
