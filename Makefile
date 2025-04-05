@@ -4,7 +4,7 @@ CC = cc
 # Client
 MANDATORY_EXEC_CLIENT = client
 MANDATORY_CLIENT_SOURCES = mandatory/client.c \
-                           mandatory/convertStringToPID.c \
+                           mandatory/convert_string_to_pid.c \
                            mandatory/ft_putchar_fd.c \
                            mandatory/ft_putstr_fd.c \
                            mandatory/ft_strlen.c \
