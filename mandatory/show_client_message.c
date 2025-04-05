@@ -12,7 +12,6 @@
 
 #include "minitalk.h"
 
-
 size_t	ft_unicode_len(const char *c)
 {
 	if (0 <= c[0])
