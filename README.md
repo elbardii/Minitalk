@@ -1,3 +1,4 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/elbardii/Minitalk)
 # Minitalk
 ### تحليل شامل للمشروع "Minitalk"
 
